@@ -1,0 +1,176 @@
+<{php}>
+$ua = $_SERVER['HTTP_USER_AGENT'];
+if ((ereg("Windows",$ua) > 0) && (ereg("MSIE",$ua) > 0)) {if (ereg("MSIE 6.",$ua) > 0) {echo '';}} else {
+echo '<?xml version="1.0" encoding="'._CHARSET.'"?>';echo "\n";}
+<{/php}>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<title><{$xoops_sitename}> - <{if $xoops_pagetitle}><{$xoops_pagetitle}><{else}><{$xoops_slogan}><{/if}></title>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author|replace:"@":"&#x40;"}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="start" title="<{$xoops_sitename}>" href="<{$xoops_url}>/" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<link rel="stylesheet" href="<{$xoops_url}>/lightbox2.03.3/css/lightbox.css" type="text/css" media="screen" />
+<{$xoops_module_header}>
+</head>
+<body>
+<div class="container">
+	<div id="l_clr_r_wrap">
+		<div class="header_wrap">
+			<div class="site_name_wrap">
+			<div class="site_name_wrap_top">
+			<div class="site_name_wrap_btm">
+				<h2><a href="<{$xoops_url}>/" class="from_scroll" id="top" name="top" title="トップページへ戻る">
+					<{$xoops_sitename}>
+				</a></h2>
+				<h1 class="pagetitle"><{$xoops_pagetitle}></h1>
+				<hr />
+			</div>
+			</div>
+			</div>
+			<div class="global_menu_wrap">
+				<ul class="global_menu">
+					<{foreach from=$xugj_menus item="menu0"}>
+						<{if $menu0.dirname == $xoops_dirname}>
+							<{assign var="xugj_menus1" value=$menu0.sub}>
+							<{assign var="menu0_class" value="selected"}>
+						<{else}>
+							<{assign var="menu0_class" value=""}>
+						<{/if}>
+						<li class="menu_li_<{$menu0_class}>"><!--
+								--><a href="<{$xoops_url}>/modules/<{$menu0.dirname}>/<{$menu0.url}>"><{$menu0.name}></a><!--
+						--></li>
+					<{/foreach}>
+				</ul>
+			</div>
+		</div>
+		<div class="main_area">
+		<div class="main_area_top">
+		<div class="main_area_btm">
+			<div id="<{if $xoops_showlblock || $xoops_showrblock}>centercolumn<{else}>centercolumn_only<{/if}>">
+				<{if $xoops_showcblock == 1}>
+				<div id="centerCcolumn">
+					<{foreach item=block from=$xoops_ccblocks}>
+						<{if ! $block.title|strstr:"none"}>
+							<div class="blockTitle_wrap">
+								<h2 class="blockTitle"><{$block.title}></h2>
+							</div>
+						<{/if}>
+						<div class="blockContent_wrap">
+							<div class="blockContent"><{$block.content}></div>
+						</div>
+						<hr />
+					<{/foreach}>
+				</div>
+				<{/if}>
+				<{if $xoops_contents}>
+				<div class="content_wrap">
+					<div class="content"><{$xoops_contents}></div>
+					<hr />
+				</div>
+				<{/if}>
+				<{if $xoops_clblocks || $xoops_crblocks }>
+				<div id="cl_cr_wrap">
+					<div id="centerLcolumn">
+						<{foreach item=block from=$xoops_clblocks}>
+							<{if ! $block.title|strstr:"none"}>
+								<div class="blockTitle_wrap">
+									<h2 class="blockTitle"><{$block.title}></h2>
+								</div>
+							<{/if}>
+							<div class="blockContent_wrap">
+								<div class="blockContent"><{$block.content}></div>
+							</div>
+							<hr />
+						<{/foreach}>
+					</div>
+					<div id="centerRcolumn">
+						<{foreach item=block from=$xoops_crblocks}>
+							<{if ! $block.title|strstr:"none"}>
+								<div class="blockTitle_wrap">
+									<h2 class="blockTitle"><{$block.title}></h2>
+								</div>
+							<{/if}>
+							<div class="blockContent_wrap">
+								<div class="blockContent"><{$block.content}></div>
+							</div>
+							<hr />
+						<{/foreach}>
+					</div>
+				</div>
+				<{/if}>
+			</div>
+			<{if $xoops_showlblock || $xoops_showrblock}>
+			<div class="l_r_column_wrap">
+			<div class="l_r_column_wrap_top">
+			<div class="l_r_column_wrap_btm">
+				<{if $xoops_showlblock == 1}>
+					<{foreach item=block from=$xoops_lblocks}>
+						<{if ! $block.title|strstr:"none"}>
+							<div class="blockTitle_wrap">
+								<h2 class="blockTitle"><{$block.title}></h2>
+							</div>
+						<{/if}>
+						<div class="blockContent_wrap">
+							<div class="blockContent"><{$block.content}></div>
+						</div>
+						<hr />
+					<{/foreach}>
+				<{/if}>
+				<{if $xoops_showrblock == 1}>
+					<{foreach item=block from=$xoops_rblocks}>
+						<{if ! $block.title|strstr:"none"}>
+							<div class="blockTitle_wrap">
+								<h2 class="blockTitle"><{$block.title}></h2>
+							</div>
+						<{/if}>
+						<div class="blockContent_wrap">
+							<div class="blockContent"><{$block.content}></div>
+						</div>
+						<hr />
+					<{/foreach}>
+				<{/if}>
+			</div>
+			</div>
+			</div>
+			<{/if}>
+		</div>
+		</div>
+		</div>
+		
+		<div class="footer_margin">
+		<div class="footer_wrap">
+		<div class="footer_wrap_top">
+		<div class="footer_wrap_btm">
+			<address class="footer clearboth">
+				<{$xoops_footer}>
+			</address>
+		</div>
+		</div>
+		</div>
+		</div>
+		<p class="expiece">
+			Theme Designed by <a href="http://www.expiece.com/html/" target="_blank"><cite>EXTRAFFIC</cite></a>
+		</p>
+	</div>
+</div>
+<div class="to_scroll">
+	<p><a href="#top"><img src="<{$xoops_imageurl}>image/none.gif" width="100" height="31" alt="" title="" /></a></p>
+</div>
+<div class="logo_position">
+	<img src="<{$xoops_imageurl}>/image/logo.gif" alt="<{$xoops_sitename}>" title="<{$xoops_sitename}>" />
+</div>
+</body>
+</html>

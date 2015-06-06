@@ -1,0 +1,783 @@
+/*------------------------------------------------
+Design by EXTRAFFIC	copyright (c) ExPiece
+          http://www.expiece.com/html/
+------------------------------------------------*/
+
+/*------------------------------------------------
+全般定義
+global
+------------------------------------------------*/
+body {
+	color: #000;
+	text-align: center;
+	font-size: 75%;
+	line-height: 1.8;
+	font-family:	Verdana,
+			Helvetica,
+			'ＭＳ Ｐゴシック',
+			'Hiragino Kaku Gothic Pro',
+			'ヒラギノ角ゴ Pro W3',
+			osaka,
+			sans-serif;
+	background: #330 url(../image/body_bg.gif);
+}
+/*凡庸クラス---------------------*/
+.dsp_none {
+	display: none;
+}
+.clearboth {
+	clear: both;
+}
+.fontsizedown {
+	font-size: 70%;
+	font-weight: normal;
+}
+/*一般タグ全般定義---------------------*/
+h1 {
+	font-size: 200%;
+}
+h2 {
+	font-size: 160%;
+}
+h3 {
+	font-size: 130%;
+}
+h2, h3, h4, h5 {
+}
+input,select {
+	margin: 0;
+	padding: 2px 0;
+	font-size: 100%;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #333;
+	border-right: 1px solid #333;
+	font-family:	Verdana,
+			Helvetica,
+			'ＭＳ Ｐゴシック',
+			'Hiragino Kaku Gothic Pro',
+			'ヒラギノ角ゴ Pro W3',
+			osaka,
+			sans-serif;
+	background: #fff;
+}
+input:hover, select:hover, textarea:hover {
+	border-top: 1px solid #333;
+	border-left: 1px solid #333;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+textarea {
+	overflow: auto;
+	font-size: 100%;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #333;
+	border-right: 1px solid #333;
+	font-family: Verdana,
+				Helvetica,
+				'ＭＳ Ｐゴシック',
+				'Hiragino Kaku Gothic Pro',
+				'ヒラギノ角ゴ Pro W3',
+				osaka,
+				sans-serif;
+	background: #fff;
+}
+abbr, acronym {
+	cursor: help;
+	border-bottom: 1px dotted #bbb;
+}
+/*リスト表示全般定義-------------------*/
+ul {
+	text-align: left;
+}
+li {
+	line-height: 1.8;
+	list-style: none;
+}
+/*-----------------------------------------------
+.container
+upper class or id is none.
+It's tag only <body>
+-----------------------------------------------*/
+.container {
+	margin: 0 auto;
+}
+/*-----------------------------------------------
+左・中央・右各ブロックラッパー
+upper class or id is
+.container
+-----------------------------------------------*/
+#l_clr_r_wrap {
+	margin: 0 auto;
+	padding: 20px 20px 0;
+	width: 860px;
+	clear: both;
+	overflow: hidden;
+	text-align: left;
+	border-left: 3px solid #110;
+	border-right: 3px solid #110;
+	background: #990 url(../image/l_clr_r_bg.gif);
+}
+/*-----------------------------------------------
+ヘッダ部定義
+upper class or id is
+#l_clr_r_wrap
+-----------------------------------------------*/
+.header_wrap {
+	overflow: hidden;
+	width: 100%;
+}
+.site_name_wrap {
+	display: block;
+	float: left;
+	padding: 0;
+	width: 860px;
+	background: #660 url(../image/head_and_foot_mid.gif) repeat-y top;
+	margin-bottom: 20px;
+}
+.site_name_wrap_top {
+	background: url(../image/head_and_foot_top.gif) no-repeat top;
+}
+.site_name_wrap_btm {
+	background: url(../image/head_and_foot_btm.gif) no-repeat bottom;
+}
+.site_name_wrap h2 {
+	text-align: left;
+	padding-left: 25px;
+	font-size: 400%;
+	font-weight: normal;
+}
+h1.pagetitle {
+	text-align: left;
+	margin-top: -25px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	overflow: hidden;
+	font-size: 100%;
+}
+a.from_scroll {
+	color: #990;
+}
+a:hover.from_scroll {
+	color: #990;
+	text-decoration: none;
+}
+.logo_position {
+	overflow:			hidden;
+	position:			absolute;
+	top:				0;
+	right:				0;
+}
+/*-----------------------------------------------
+ヘッダ部メニュー
+upper class or id is
+.header_wrap
+-----------------------------------------------*/
+.global_menu_wrap {
+	clear: both;
+	overflow: hidden;
+	color: #333;
+	height: 60px;
+	margin-bottom: 20px;
+	background: #cc0 url(../image/global_menu.gif) repeat-y top;
+}
+.global_menu li {
+	float: left;
+	text-align: center;
+}
+.global_menu li.menu_li_ a {
+	display: block;
+	overflow: hidden;
+	width: 86px;
+	padding: 20px 0;
+	color: #330;
+}
+.global_menu li.menu_li_ a:hover {
+	padding: 20px 0;
+	text-decoration: none;
+	color: #990;
+	background: #330 url(../image/global_menu_hover.gif) no-repeat top;
+}
+.global_menu li.menu_li_selected a {
+	display: block;
+	overflow: hidden;
+	width: 86px;
+	padding: 20px 0;
+	color: #cc0;
+	background: #660 url(../image/global_menu_select.gif) no-repeat top;
+}
+.global_menu li.menu_li_selected a:hover {
+	text-decoration: none;
+	color: #990;
+	background: #330 url(../image/global_menu_hover.gif) no-repeat top;
+}
+/*-----------------------------------------------
+フッタブロックの定義
+upper class or id is
+ .l_clr_r_wrap
+-----------------------------------------------*/
+.footer_margin {
+	clear: both;
+	padding-top: 20px;
+}
+.footer_wrap {
+	text-align: center;
+	color: #cc0;
+	background: #660 url(../image/head_and_foot_mid.gif) repeat-y top;
+}
+.footer_wrap_top {
+	background: url(../image/head_and_foot_top.gif) no-repeat top;
+}
+.footer_wrap_btm {
+	background: url(../image/head_and_foot_btm.gif) no-repeat bottom;
+}
+
+address.footer {
+	margin: 0;
+	padding: 20px 0;
+}
+p.expiece {
+	padding: 10px;
+	color: #330;
+	font-family: arial;
+	text-align: left;
+	font-size: 85%;
+}
+p.expiece a {
+	color: #330;
+}
+p.expiece a:hover {
+	color: #330;
+}
+/*-----------------------------------------------
+upper class or id is none.
+It's tag only <body>
+-----------------------------------------------*/
+/*スクロールアップ-------------------*/
+div.to_scroll {
+	clear: both;
+	text-align: center;
+	position: fixed;
+	right: 10px;
+	bottom: 0;
+}
+.to_scroll p {
+	margin: 0;
+	padding: 0;
+	height: 31px;
+	width: 100px;
+}
+.to_scroll a {
+	display: block;
+	background: url(../image/scroll_up.gif) no-repeat left;
+}
+.to_scroll a:hover {
+	display: block;
+	background: url(../image/scroll_up.gif) no-repeat right;
+}
+/*-----------------------------------------------
+ページナビ
+upper class or id is in modules.
+-----------------------------------------------*/
+span.pagenav_on {
+	padding: 5px 8px;
+	font-size: 15px;
+	text-decoration: none;
+	font-weight: bold;
+	border: 1px solid #eee;
+}
+span.pagenav_off {
+	padding: 5px 8px;
+	font-size: 15px;
+	text-decoration: none;
+	border: 1px solid #ddd;
+	background: #f5f5f5;
+}
+/*-----------------------------------------------
+バナー定義
+This class is no use in this theme.
+-----------------------------------------------*/
+#l_clr_r_wrap #banner div {
+	overflow: hidden;
+	text-align: center;
+}
+/*-----------------------------------------------
+モジュール定義
+upper class or id is
+#centercolumn or #centercolumn_only
+this is a wrapper of modules.
+-----------------------------------------------*/
+.content_wrap {}
+.content {
+	clear: both;
+	overflow: hidden;
+}
+.content legend {
+	display: block;
+}
+/*-----------------------------------------------
+中央ブロック定義
+upper class or id is
+#l_clr_r_wrap
+-----------------------------------------------*/
+.main_area {
+	float: left;
+	background: #fff url(../image/main_area_mid.gif) repeat-y top;
+}
+.main_area_top {
+	float: left;
+	background: url(../image/main_area_top.gif) repeat-x top;
+}
+.main_area_btm {
+	padding: 20px;
+	width: 820px;
+	float: left;
+	background: url(../image/main_area_btm.gif) repeat-x bottom;
+}
+/*--- for 2 columns --------------*/
+#centercolumn {
+	float: right;
+	overflow: hidden;
+	width: 600px;
+	font-size: 120%;
+}
+/*--- for 1 column only ---------*/
+#centercolumn_only {
+	float: left;
+	width: 820px;
+	font-size: 120%;
+}
+/*-----------------------------------------------
+中央-中央ブロック定義
+upper class or id is
+.centercolumn
+-----------------------------------------------*/
+#centerCcolumn {
+	clear: both;
+}
+#centerCcolumn .blockTitle_wrap {
+}
+#centerCcolumn .blockTitle {
+	overflow: hidden;
+	padding:5px;
+	font-size: 130%;
+	color: #000;
+}
+#centerCcolumn .blockContent_wrap {
+}
+#centerCcolumn .blockContent {
+	overflow: hidden;
+	padding:5px;
+}
+/*-----------------------------------------------
+中央-左・右各ブロックラッパー
+upper class or id is
+#l_clr_r_wrap
+-----------------------------------------------*/
+#cl_cr_wrap {
+	clear: both;
+	padding: 20px 0;
+}
+#centerLcolumn, #centerRcolumn {
+	background: #cc0 url(../image/cl_cr_block_bg.gif);
+}
+#centerLcolumn {
+	float: left;
+	width: 420px;
+}
+#centerRcolumn {
+	float: right;
+	width: 420px;
+}
+/*-----------------------------------------------
+中央-左・右各ブロック タイトル定義
+upper class or id is
+#cl_cr_wrap
+-----------------------------------------------*/
+#centerLcolumn .blockTitle_wrap,
+#centerRcolumn .blockTitle_wrap {
+	padding: 10px 10px 0 10px;
+}
+#centerLcolumn .blockTitle,
+#centerRcolumn .blockTitle {
+	overflow: hidden;
+	padding:5px 10px;
+	font-size: 130%;
+	color: #330;
+	background: url(../image/cl_cr_block_title.gif);
+}
+/*-----------------------------------------------
+中央-左・右各ブロック コンテンツ定義
+upper class or id is
+#cl_cr_wrap
+-----------------------------------------------*/
+#centerLcolumn .blockContent_wrap {
+}
+#centerRcolumn .blockContent_wrap {
+}
+#centerLcolumn .blockContent,
+#centerRcolumn .blockContent {
+	overflow: hidden;
+	padding:10px;
+}
+#centerLcolumn .blockContent li,
+#centerRcolumn .blockContent li {
+	padding-left: 20px;
+	background: url(../image/list.gif) no-repeat left top;
+}
+/*-----------------------------------------------
+左・右ブロック定義
+upper class or id is
+.main_area
+-----------------------------------------------*/
+.l_r_column_wrap {
+	float: left;
+	overflow: hidden;
+	width: 200px;
+	color: #330;
+	background: #cc0 url(../image/l_r_col_mid.gif) repeat-y top;
+}
+.l_r_column_wrap_top {
+	background: url(../image/l_r_col_top.gif) no-repeat top;
+}
+.l_r_column_wrap_btm {
+	background: url(../image/l_r_col_btm.gif) no-repeat bottom;
+}
+.l_r_column_wrap input,
+.l_r_column_wrap select,
+.l_r_column_wrap textarea {
+	color: #330;
+	border: 1px solid #330;
+	background: #990;
+}
+.l_r_column_wrap input:hover,
+.l_r_column_wrap select:hover,
+.l_r_column_wrap textarea:hover {
+	border: 1px solid #fff;
+}
+
+/*-----------------------------------------------
+左ブロック,右ブロック タイトルの定義
+upper class or id is
+.main_area
+-----------------------------------------------*/
+.l_r_column_wrap .blockTitle_wrap {
+	clear: both;
+	overflow: auto;
+	padding: 10px 10px 0 10px;
+}
+.l_r_column_wrap .blockTitle {
+	overflow: hidden;
+	padding:5px 10px;
+	font-size: 130%;
+	font-weight: bold;
+	color: #330;
+	background: #990 url(../image/l_r_block_title.gif) repeat-y left top;
+}
+/*-----------------------------------------------
+左ブロック,右ブロック コンテンツ定義
+upper class or id is
+.main_area
+-----------------------------------------------*/
+.l_r_column_wrap .blockContent_wrap {
+	clear: both;
+	overflow: auto;
+}
+.l_r_column_wrap .blockContent {
+	padding: 5px 13px 13px;
+}
+/*-----------------------------------------------
+メインメニュー定義
+upper class or id is
+.l_r_column_wrap .blockContent_wrap
+-----------------------------------------------*/
+#mainmenu a {
+	display: block;
+	padding: 4px 4px 4px 10px;
+}
+#mainmenu a:hover {
+	padding: 4px 4px 4px 10px;
+	background: #aa0 url(../image/arrow_move.gif) no-repeat left;
+	border-bottom: 1px solid #990;
+}
+#mainmenu a.menuTop {
+	padding: 4px 4px 4px 10px;
+	border-top: 1px solid #990;
+	border-bottom: 1px solid #990;
+}
+#mainmenu a.menuMain {
+	padding: 4px 4px 4px 10px;
+	border-bottom: 1px solid #990;
+}
+#mainmenu a.menuSub {
+	margin-left: 10px;
+	padding-left: 10px;
+	border-left: 5px solid #990;
+	border-bottom: 1px solid #990;
+}
+#mainmenu a:hover.menuSub {
+	border-left: 5px solid #990;
+	border-bottom: 1px solid #990;
+}
+/*-----------------------------------------------
+ユーザメニュー定義
+upper class or id is
+.l_r_column_wrap .blockContent_wrap
+-----------------------------------------------*/
+#usermenu a {
+	display: block;
+	padding: 4px 4px 4px 10px;
+	border-bottom: 1px solid #990;
+}
+#usermenu a.menuTop {
+	padding: 4px 4px 4px 10px;
+	border-top: 1px solid #990;
+	border-bottom: 1px solid #990;
+}
+#usermenu a:hover {
+	padding: 4px 4px 4px 10px;
+	background: #aa0 url(../image/arrow_move.gif) no-repeat left;
+	border-bottom: 1px solid #990;
+}
+/*-----------------------------------------------
+=================================================
+以下は主にモジュール内、システム内で使用します
+for in module, or in system.
+=================================================
+-----------------------------------------------*/
+
+/*-----------------------------------------------
+テーブル定義
+for table
+-----------------------------------------------*/
+table td {
+	vertical-align: top;
+	color: #000;
+}
+table th {
+	padding: 5px 10px;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #fff;
+	border: 1px solid #990;
+	background: #cc0 url(../image/th_bg.gif);
+}
+table th a {
+	color: #fff;
+}
+table th a:hover {
+	color: #c00;
+}
+/*-----------------------------------------------
+フォーラム定義：外枠
+-----------------------------------------------*/
+.outer {
+}
+/*-----------------------------------------------
+フォーラム定義：投稿情報欄
+-----------------------------------------------*/
+.head {
+	padding: 5px 10px;
+	background: #f5f5f5 url(../image/table_head_bg.jpg) repeat-x left top;
+	border: 1px solid #eee;
+}
+div.head {
+	padding: 5px 10px;
+	background: #f5f5f5 url(../image/table_head_bg.jpg) repeat-x left top;
+}
+/*-----------------------------------------------
+フォーラム定義：交互色定義
+-----------------------------------------------*/
+.even {
+	padding: 5px 10px;
+	border: 1px solid #eee;
+	background: #fafafa;
+}
+div.even {
+	padding: 5px 10px;
+	background: #fafafa;
+}
+tr.even td, tr.even {
+	padding: 5px;
+	border: 1px solid #eee;
+}
+.odd {
+	padding: 5px 10px;
+	border: 1px solid #eee;
+	background: #fff;
+}
+div.odd {
+	padding: 5px 10px;
+	background: #fff;
+}
+tr.odd td, tr.odd {
+	padding: 5px 10px;
+	border: 1px solid #eee;
+}
+tr.odd:hover, tr.even:hover {
+	border: 1px solid #ccc;
+	background: #eee;
+}
+/*-----------------------------------------------
+フォーラム定義：フッター
+-----------------------------------------------*/
+.foot {
+	padding: 5px 10px;
+	background: #f5f5f5 url(../image/table_foot_bg.jpg) repeat-x left bottom;
+	border: 1px solid #eee;
+}
+div.foot {
+	padding: 5px 10px;
+	background: #f5f5f5 url(../image/table_foot_bg.jpg) repeat-x left bottom;
+}
+/*-----------------------------------------------
+最新ニュース定義：タイトルバー
+-----------------------------------------------*/
+.itemHead {
+	padding: 10px 15px;
+	border-bottom: 5px solid #990;
+}
+/*-----------------------------------------------
+最新ニュース定義：投稿情報欄
+-----------------------------------------------*/
+.itemInfo {
+	padding: 3px;
+	text-align: right;
+}
+/*-----------------------------------------------
+最新ニュース定義：タイトル設定
+-----------------------------------------------*/
+.itemTitle {
+	font-size: 130%;
+}
+/*-----------------------------------------------
+最新ニュース定義：コンテンツ部分
+-----------------------------------------------*/
+.itemBody {
+	clear: both;
+	overflow: hidden;
+	padding: 5px;
+	background: #fefefe;
+	border: 1px solid #f5f5f5;
+}
+.itemText {
+	line-height: 150%;
+}
+.itemText:first-letter {
+	font-size: 150%;
+	font-weight: bold;
+}
+/*-----------------------------------------------
+最新ニュース定義：フッター
+-----------------------------------------------*/
+.itemFoot {
+	padding: 3px 3px 6px 5px;
+	text-align: right;
+}
+/*-----------------------------------------------
+システムメッセージ：エラー、コンファーム、リザルト
+-----------------------------------------------*/
+div.errorMsg {
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+	background: #ffcccc;
+	border-top: 1px solid #ddddff;
+	border-left: 1px solid #ddddff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+}
+div.confirmMsg {
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+	color: #136c99;
+	background: #f6f6f6;
+	border-top: 1px solid #ddddff;
+	border-left: 1px solid #ddddff;
+	border-right: 1px solid #aaaaaa;
+	border-bottom: 1px solid #aaaaaa;
+}
+div.resultMsg {
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+	color: #777;
+	background: #f6f6f6;
+	border-top: 1px solid silver;
+	border-left: 1px solid silver;
+	border-right: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+}
+/*-----------------------------------------------
+Xoopsコード記述定義
+-----------------------------------------------*/
+.xoopsCode {
+	height: 150px;
+	width: 450px;
+	overflow: auto;
+	padding: 3px;
+	border-left: 5px solid #fcc;
+	border-right: 2px solid #fcc;
+	border-top: 2px solid #fcc;
+	border-bottom: 2px solid #fcc;
+}
+.xoopsCode pre, .xoopsCode code {
+	font-family:	Century,
+			Helvetica,
+			'ＭＳ Ｐゴシック',
+			'Hiragino Kaku Gothic Pro',
+			'ヒラギノ角ゴ Pro W3',
+			osaka,
+			sans-serif;
+}
+/*-----------------------------------------------
+引用部分定義
+-----------------------------------------------*/
+.xoopsQuote {
+	height: 150px;
+	width: 450px;
+	overflow: auto;
+	padding: 3px;
+	font-family:	Verdana,
+			Helvetica,
+			'ＭＳ Ｐゴシック',
+			'Hiragino Kaku Gothic Pro',
+			'ヒラギノ角ゴ Pro W3',
+			osaka,
+			sans-serif;
+	border-left: 5px solid #ccf;
+	border-right: 2px solid #ccf;
+	border-top: 2px solid #ccf;
+	border-bottom: 2px solid #ccf;
+}
+/*-----------------------------------------------
+システム：ユーザー情報エリア部
+-----------------------------------------------*/
+.comTitle {
+	margin-bottom: 2px;
+}
+.comText {
+	padding: 2px;
+}
+.comUserStat {
+	margin: 2px;
+	padding: 2px;
+	font-size: 90%;
+	color: #777;
+	border: 1px solid #fff;
+	background-color: #eee;
+}
+.comUserStatus {
+	margin-left: 2px;
+	margin-top: 10px;
+	color: #060;
+}
+.comUserRank {
+	margin: 2px;
+}
+.comUserImg {
+	margin: 2px;
+}
